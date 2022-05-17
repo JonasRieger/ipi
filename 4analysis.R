@@ -20,7 +20,7 @@ labels = c("Topic 1: Central Banks",
 
 counts = readRDS("//media/TextMining/DoCMA/data/Working_Paper_Uncertainty/counts.rds")
 obj = readRDS("obj_inflation_updated.rds")
-clean = readRDS("obj_inflation_updated.rds")
+clean = readRDS("clean_inflation_updated.rds")
 
 # update counts
 tab = cbind(plotScot(clean, type = "docs"), type = "docs")
