@@ -8,8 +8,8 @@ library(data.table)
 
 #####
 # Only the following two lines have to be modified manually for updates.
-start_update = "2022-03-01"
-end_update = "2022-04-30"
+start_update = "2022-05-01"
+end_update = "2022-05-31"
 #####
 chunks = seq.Date(from = as.Date(start_update), to = as.Date(end_update), by = "month")
 
