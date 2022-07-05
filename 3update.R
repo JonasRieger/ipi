@@ -8,8 +8,8 @@ library(data.table)
 
 #####
 # Only the following two lines have to be modified manually for updates.
-start_update = "2022-05-01"
-end_update = "2022-05-31"
+start_update = "2022-06-01"
+end_update = "2022-06-30"
 #####
 chunks = seq.Date(from = as.Date(start_update), to = as.Date(end_update), by = "month")
 
@@ -25,6 +25,9 @@ message("filter date...")
 a = Sys.time()
 obj = filterDate(obj, s.date = start_update, e.date = end_update)
 obj = textmeta(meta = obj$meta, text = obj$text)
+
+message(sum(duplicated(names(obj$text))), " duplicates deleted")
+obj$text = obj$text[!duplicated(names(obj$text))]
 
 message(difftime(Sys.time(), a, units = "mins"), " mins")
 
