@@ -8,4 +8,4 @@ The repository provides selected data and scripts related to the working papers
 
 For bug reports, comments and questions please use the [issue tracker](https://github.com/JonasRieger/ipi/issues).
 
-See also the corresponding articles in Handelsblatt from [2022/05/24](https://www.handelsblatt.com/28369000.html) and [2022/03/10](https://www.handelsblatt.com/28146862.html).
+See also the corresponding articles in Handelsblatt from [2022/07/25](https://www.handelsblatt.com/politik/konjunktur/nachrichten/28543406.html), [2022/05/24](https://www.handelsblatt.com/28369000.html) and [2022/03/10](https://www.handelsblatt.com/28146862.html).
