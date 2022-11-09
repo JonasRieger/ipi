@@ -1,3 +1,6 @@
+just run ipi_update.R (resources: ~60min., 32GB)
+
+### deprecated:
 3update.R
 	-> sobald data_update.R durchgelaufen ist (obj_updated)
 	-> anpassen des start und end dates
