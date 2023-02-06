@@ -17,3 +17,6 @@ If you're using data from this repository or want to refer to the methodology of
 Instead, if you wish to refer to a particular interpretation, please cite the corresponding working paper.
 
 For bug reports, comments and questions please use the [issue tracker](https://github.com/JonasRieger/ipi/issues).
+
+## Usage
+Please note: For legal reasons the repository cannot provide all data. Please [let us know](https://github.com/JonasRieger/upi/issues) if you feel that there is anything missing that we could add.
