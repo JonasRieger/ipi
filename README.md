@@ -9,7 +9,7 @@ The repository provides selected data and scripts related to the working papers
 
 ## Citation
 
-If you're using data from this repository or want to refer to the methodolody of the IPI, please cite our paper
+If you're using data from this repository or want to refer to the methodology of the IPI, please cite our paper
 * [Rieger, J., Hornig, N., Schmidt, T. and Müller, H. (2023).](https://github.com/JonasRieger/mufin23/blob/master/paper.pdf) Early Warning Systems? Building Time Consistent Perception Indicators for Economic Uncertainty and Inflation Using Efficient Dynamic Modeling. Accepted for [MUFin’23](https://sites.google.com/view/w-mufin).
 
 For bug reports, comments and questions please use the [issue tracker](https://github.com/JonasRieger/ipi/issues).
