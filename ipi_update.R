@@ -236,7 +236,46 @@ sims = lapply(1:getK(getLDA(roll)), function(k){
 valq = sapply(sims, function(x) c(NA, x$sims[cbind(2:nquarter,2:nquarter-1)]))
 valq_first = sapply(sims, function(x) x$sims[,1])
 valq_last = sapply(sims, function(x) x$sims[nquarter,])
-saveRDS(sims, file.path("analysis", "sim_quarterly.rds"))
+
+for(k in 1:K){
+  colnames(sims[[k]]$sims) = rownames(sims[[k]]$sims) = as.character(xquarter)
+  write.csv(sims[[k]]$sims, file.path("analysis", "intra_topic_cosine",
+                                      paste0(gsub(":", "", gsub(" ", "_", labels))[k],
+                                             "_quarterly.csv")))
+}
+
+min_quarterly = min(sapply(sims, function(x) min(x$sims, na.rm = TRUE)))
+pdf(file.path("analysis", "intra_topic_cosine", "intra_topic_cosine_quarterly_common_limit.pdf"),
+    width = 16, height = 14)
+for(k in 1:K){
+  plot(sims[[k]]$sims %>% 
+         as.data.frame() %>%
+         rownames_to_column("quarter") %>%
+         pivot_longer(-c(quarter), names_to = "quarter2", values_to = "Similarity") %>%
+         ggplot(aes(x=quarter, y=quarter2, fill=Similarity)) + 
+         geom_raster() +
+         scale_fill_viridis_c(option = "inferno", limits = c(min_quarterly,1)) +
+         xlab("") + ylab("") +
+         theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+         ggtitle(labels[k]))
+}
+dev.off()
+pdf(file.path("analysis", "intra_topic_cosine", "intra_topic_cosine_quarterly.pdf"),
+    width = 16, height = 14)
+for(k in 1:K){
+  plot(sims[[k]]$sims %>% 
+         as.data.frame() %>%
+         rownames_to_column("quarter") %>%
+         pivot_longer(-c(quarter), names_to = "quarter2", values_to = "Similarity") %>%
+         ggplot(aes(x=quarter, y=quarter2, fill=Similarity)) + 
+         geom_raster() +
+         scale_fill_viridis_c(option = "inferno") +
+         xlab("") + ylab("") +
+         theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+         ggtitle(labels[k]))
+}
+dev.off()
+saveRDS(sims, file.path("analysis", "intra_topic_cosine", "sim_quarterly.rds"))
 
 # month
 months = lubridate::floor_date(getDates(roll), "month")
@@ -283,7 +322,46 @@ sims = lapply(1:getK(getLDA(roll)), function(k){
 valm = sapply(sims, function(x) c(NA, x$sims[cbind(2:nmonth,2:nmonth-1)]))
 valm_first = sapply(sims, function(x) x$sims[,1])
 valm_last = sapply(sims, function(x) x$sims[nmonth,])
-saveRDS(sims, file.path("analysis", "sim_monthly.rds"))
+
+for(k in 1:K){
+  colnames(sims[[k]]$sims) = rownames(sims[[k]]$sims) = as.character(xmonth)
+  write.csv(sims[[k]]$sims, file.path("analysis", "intra_topic_cosine",
+                                      paste0(gsub(":", "", gsub(" ", "_", labels))[k],
+                                             "_monthly.csv")))
+}
+
+min_monthly = min(sapply(sims, function(x) min(x$sims, na.rm = TRUE)))
+pdf(file.path("analysis", "intra_topic_cosine", "intra_topic_cosine_monthly_common_limit.pdf"),
+    width = 30, height = 28)
+for(k in 1:K){
+  plot(sims[[k]]$sims %>% 
+         as.data.frame() %>%
+         rownames_to_column("month") %>%
+         pivot_longer(-c(month), names_to = "month2", values_to = "Similarity") %>%
+         ggplot(aes(x=month, y=month2, fill=Similarity)) + 
+         geom_raster() +
+         scale_fill_viridis_c(option = "inferno", limits = c(min_monthly,1)) +
+         xlab("") + ylab("") +
+         theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+         ggtitle(labels[k]))
+}
+dev.off()
+pdf(file.path("analysis", "intra_topic_cosine", "intra_topic_cosine_monthly.pdf"),
+    width = 30, height = 28)
+for(k in 1:K){
+  plot(sims[[k]]$sims %>% 
+         as.data.frame() %>%
+         rownames_to_column("month") %>%
+         pivot_longer(-c(month), names_to = "month2", values_to = "Similarity") %>%
+         ggplot(aes(x=month, y=month2, fill=Similarity)) + 
+         geom_raster() +
+         scale_fill_viridis_c(option = "inferno") +
+         xlab("") + ylab("") +
+         theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+         ggtitle(labels[k]))
+}
+dev.off()
+saveRDS(sims, file.path("analysis", "intra_topic_cosine", "sim_monthly.rds"))
 
 xmin = min(xmonth)
 

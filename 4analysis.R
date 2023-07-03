@@ -216,7 +216,6 @@ sims = lapply(1:getK(getLDA(roll)), function(k){
 valm = sapply(sims, function(x) c(NA, x$sims[cbind(2:nmonth,2:nmonth-1)]))
 valm_first = sapply(sims, function(x) x$sims[,1])
 valm_last = sapply(sims, function(x) x$sims[nmonth,])
-saveRDS(sims, file.path("analysis", "sim_monthly.rds"))
 
 for(k in 1:K){
   colnames(sims[[k]]$sims) = rownames(sims[[k]]$sims) = as.character(xmonth)
