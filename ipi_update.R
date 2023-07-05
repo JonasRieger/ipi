@@ -13,6 +13,7 @@ library(GGally)
 library(ggthemes)
 library(rollinglda)
 library(stringr)
+library(tidyverse)
 
 memory = "6 month"
 
@@ -237,6 +238,7 @@ valq = sapply(sims, function(x) c(NA, x$sims[cbind(2:nquarter,2:nquarter-1)]))
 valq_first = sapply(sims, function(x) x$sims[,1])
 valq_last = sapply(sims, function(x) x$sims[nquarter,])
 
+dir.create(file.path("analysis", "intra_topic_cosine"))
 for(k in 1:K){
   colnames(sims[[k]]$sims) = rownames(sims[[k]]$sims) = as.character(xquarter)
   write.csv(sims[[k]]$sims, file.path("analysis", "intra_topic_cosine",
@@ -381,21 +383,21 @@ cosine_monthly = ggmatrix(lapply(1:10, function(i){
     annotate("text", x = xmin, y = 0.05, label = labels[i], hjust = 0, vjust = 0)
 }), nrow = 5, ncol = 2, ylab = "Cosine Similarity")
 
-pdf(file.path("analysis", "topics_cosine_quarter.pdf"), width = 8, height = 10)
+pdf(file.path("analysis", "intra_topic_cosine", "topics_cosine_quarter.pdf"), width = 8, height = 10)
 print(cosine_quarterly)
 dev.off()
 
-tiff(file.path("analysis", "topics_cosine_quarter.tiff"),
+tiff(file.path("analysis", "intra_topic_cosine", "topics_cosine_quarter.tiff"),
      width = 1600, height = 2000, pointsize = 200, compression = "lzw", res = 200,
      type = "cairo")
 print(cosine_quarterly)
 dev.off()
 
-pdf(file.path("analysis", "topics_cosine_month.pdf"), width = 8, height = 10)
+pdf(file.path("analysis", "intra_topic_cosine", "topics_cosine_month.pdf"), width = 8, height = 10)
 print(cosine_monthly)
 dev.off()
 
-tiff(file.path("analysis", "topics_cosine_month.tiff"),
+tiff(file.path("analysis", "intra_topic_cosine", "topics_cosine_month.tiff"),
      width = 1600, height = 2000, pointsize = 200, compression = "lzw", res = 200,
      type = "cairo")
 print(cosine_monthly)
