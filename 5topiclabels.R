@@ -1,5 +1,5 @@
 library(data.table)
-devtools::load_all("../topiclabels")
+library(topiclabels)
 token = ""
 
 files = list.files("analysis/topWordsPerMonth/", full.names = TRUE)
