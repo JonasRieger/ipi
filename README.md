@@ -24,6 +24,7 @@ See also the corresponding articles in Handelsblatt from [2022/07/25](https://ww
 * 10 topics modeled with ``alpha=eta=0.1``
 * monthly updates with six months memory
 * words are taken into account as soon as they pass a threshold of five appearances in an update month
+* for more details, please refer to the given scripts
 
 ## Related Software
 * [rollinglda](https://github.com/JonasRieger/rollinglda) to model the rolling version of LDA.
