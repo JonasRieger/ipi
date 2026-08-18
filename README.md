@@ -20,7 +20,7 @@ or the corresponding working paper
 See also the corresponding articles in Handelsblatt from [2022/07/25](https://www.handelsblatt.com/politik/konjunktur/nachrichten/28543406.html), [2022/05/24](https://www.handelsblatt.com/28369000.html) and [2022/03/10](https://www.handelsblatt.com/28146862.html).
 
 ## Parameters
-# The parameters are likely to be adapted to the values used in Schmidt et al. (2026) in the future.
+### The parameters are likely to be adapted to the values used in Schmidt et al. (2026) in the future.
 * 10 topics modeled with ``alpha=eta=0.1``
 * monthly updates with six months memory
 * words are taken into account as soon as they pass a threshold of five appearances in an update month
