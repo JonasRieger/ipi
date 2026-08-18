@@ -1,4 +1,6 @@
 # IPI - Inflation Perception Indicator
+see also [UPI](https://github.com/JonasRieger/upi/)
+
 ## Citation & References
 
 The repository provides selected data and scripts related to the following papers.
