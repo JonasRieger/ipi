@@ -14,6 +14,7 @@ Instead, if you wish to refer to a particular interpretation, please cite the fo
 
 or the corresponding working paper
 
+* [Müller, H., Schmidt, T., Schmidt, T., Rieger, J. & Jentsch, C. (2026).](http://dx.doi.org/10.17877/DE290R-26916) When the Whip Comes Down: Updating Our Indicators Capturing Inflation and Uncertainty Perception - a Research Note. *DoCMA Working Paper #15*.
 * [Müller, H., Schmidt, T., Rieger, J., Hornig, N. & Hufnagel, L.M. (2023).](http://doi.org/10.17877/DE290R-23141) The Inflation Attention Cycle: Updating the Inflation Perception Indicator (IPI) up to February 2023 - a Research Note. *DoCMA Working Paper #13*.
 * [Müller, H., Rieger, J., Schmidt, T. & Hornig, N. (2022).](http://doi.org/10.17877/DE290R-22875) An Increasing Sense of Urgency: The Inflation Perception Indicator (IPI) to 30 June 2022 - a Research Note. *DoCMA Working Paper #12*.
 * [Müller, H., Rieger, J., Schmidt, T. & Hornig, N. (2022).](https://doi.org/10.17877/DE290R-22769) Pressure is high - and rising: The Inflation Perception Indicator (IPI) to 30 April 2022 - a Research Note Analysis. *DoCMA Working Paper #10*.
